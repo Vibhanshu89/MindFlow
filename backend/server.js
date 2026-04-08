@@ -17,6 +17,7 @@ const { errorHandler, notFound } = require('./middleware/errorMiddleware');
 const initSocket = require('./sockets/socketHandler');
 
 const app = express();
+app.set('trust proxy', 1);
 const httpServer = http.createServer(app);
 
 // Socket.io setup
