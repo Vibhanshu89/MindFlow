@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://mindflow-backend-1u0h.onrender.com/api/:path*"
+    },
+    {
+      "source": "/socket.io/:path*",
+      "destination": "https://mindflow-backend-1u0h.onrender.com/socket.io/:path*"
+    }
+  ]
+}

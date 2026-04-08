@@ -170,11 +170,9 @@ export default function ProjectsPage() {
             <span style={{ fontWeight: 700, color: 'var(--accent-primary)' }}>{projects.length}</span> total projects · <span style={{ color: 'var(--accent-success)' }}>{projects.filter(p => p.status === 'active').length} active</span>
           </p>
         </div>
-        {(user?.role === 'admin' || user?.role === 'manager') && (
-          <button onClick={() => setShowCreate(true)} className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <Plus size={16} /> New Project
-          </button>
-        )}
+        <button onClick={() => setShowCreate(true)} className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <Plus size={16} /> New Project
+        </button>
       </div>
 
       {/* Filter bar */}
@@ -226,24 +224,22 @@ export default function ProjectsPage() {
               <ProjectCard project={project} />
             </div>
           ))}
-          {(user?.role === 'admin' || user?.role === 'manager') && (
-            <button
-              onClick={() => setShowCreate(true)}
-              style={{
-                background: 'var(--bg-surface)', border: '2px dashed var(--border-medium)',
-                borderRadius: 18, padding: '40px 20px',
-                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12,
-                cursor: 'pointer', transition: 'all 0.2s ease', color: 'var(--text-muted)',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.color = 'var(--accent-primary)'; e.currentTarget.style.background = 'rgba(108,99,255,0.04)'; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-medium)'; e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.background = 'var(--bg-surface)'; }}
-            >
-              <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--bg-surface-2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Plus size={22} />
-              </div>
-              <span style={{ fontSize: 14, fontWeight: 600 }}>New Project</span>
-            </button>
-          )}
+          <button
+            onClick={() => setShowCreate(true)}
+            style={{
+              background: 'var(--bg-surface)', border: '2px dashed var(--border-medium)',
+              borderRadius: 18, padding: '40px 20px',
+              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12,
+              cursor: 'pointer', transition: 'all 0.2s ease', color: 'var(--text-muted)',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.color = 'var(--accent-primary)'; e.currentTarget.style.background = 'rgba(108,99,255,0.04)'; }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-medium)'; e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.background = 'var(--bg-surface)'; }}
+          >
+            <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--bg-surface-2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Plus size={22} />
+            </div>
+            <span style={{ fontSize: 14, fontWeight: 600 }}>New Project</span>
+          </button>
         </div>
       ) : (
         <div style={{ textAlign: 'center', padding: '80px 0' }}>
@@ -252,11 +248,9 @@ export default function ProjectsPage() {
           <p style={{ color: 'var(--text-muted)', fontSize: 14, marginBottom: 24 }}>
             {search ? 'Try a different search term' : 'Create your first project to get started'}
           </p>
-          {(user?.role === 'admin' || user?.role === 'manager') && (
-            <button onClick={() => setShowCreate(true)} className="btn-primary" style={{ margin: '0 auto', display: 'inline-flex', gap: 8 }}>
-              <Plus size={16} /> Create Project
-            </button>
-          )}
+          <button onClick={() => setShowCreate(true)} className="btn-primary" style={{ margin: '0 auto', display: 'inline-flex', gap: 8 }}>
+            <Plus size={16} /> Create Project
+          </button>
         </div>
       )}
 

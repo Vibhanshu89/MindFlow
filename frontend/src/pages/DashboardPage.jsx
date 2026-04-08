@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { projectAPI, taskAPI } from '../services/api';
 import {
   FolderKanban, CheckSquare, TrendingUp, AlertTriangle, ArrowRight,
-  Clock, Activity, Calendar, BarChart3, Zap, Star
+  Clock, Activity, Calendar, BarChart3, Zap, Star, Plus
 } from 'lucide-react';
 import { Doughnut, Bar } from 'react-chartjs-2';
 import {
@@ -195,9 +195,12 @@ export default function DashboardPage() {
             <h1 style={{ fontSize: 22, fontWeight: 800, color: 'white', fontFamily: 'Plus Jakarta Sans', marginBottom: 4 }}>
               {greeting}, {user?.name?.split(' ')[0]}! 👋
             </h1>
-            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 14, fontWeight: 400 }}>
+            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 14, fontWeight: 400, marginBottom: 12 }}>
               Here's your project overview for today.
             </p>
+            <Link to="/projects" className="btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'white', color: 'var(--accent-primary)', border: 'none' }}>
+              <Plus size={16} /> New Project
+            </Link>
           </div>
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.15)', borderRadius: 10, padding: '8px 14px' }}>
             <Calendar size={14} color="rgba(255,255,255,0.8)" />
