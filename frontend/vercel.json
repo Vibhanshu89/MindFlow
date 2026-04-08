@@ -7,6 +7,10 @@
     {
       "source": "/socket.io/:path*",
       "destination": "https://mindflow-backend-1u0h.onrender.com/socket.io/:path*"
+    },
+    {
+      "source": "/((?!api|socket.io).*)$",
+      "destination": "/index.html"
     }
   ]
 }
